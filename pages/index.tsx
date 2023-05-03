@@ -10,6 +10,7 @@ import {
   GridItem,
   Heading,
   Image,
+  Stack,
   Text,
 } from "@chakra-ui/react";
 import { Link, LocationMap } from "components";
@@ -54,7 +55,14 @@ export default function Home({ hero, about, infoCards }: HomeProps) {
         <meta name="description" content="Bostadsrättsföreningen Dansa" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Image src={hero.fields.file.url} alt={hero.title} />
+      <Image
+        src={hero.fields.file.url}
+        alt={hero.title}
+        width="100%"
+        maxH="70dvh"
+        objectFit="cover"
+        objectPosition="bottom"
+      />
       <Container paddingY={12} maxW="3xl" centerContent bgColor="white">
         {renderRichText(about)}
       </Container>
@@ -87,7 +95,29 @@ export default function Home({ hero, about, infoCards }: HomeProps) {
           </Grid>
         </Container>
       </Box>
-      <LocationMap />
+      <Container maxW="3xl" paddingY={12}>
+        <Grid gap={4} templateColumns={["1fr", "1fr", "200px auto"]}>
+          <Stack gap={2}>
+            <Heading>Kontakt</Heading>
+            <Box>
+              <Heading as="h3" size="sm">Mejladress</Heading>
+              <Link href="mailto:styrelsen@brf-dansa.se" color="green.600">
+                styrelsen@brf-dansa.se
+              </Link>
+            </Box>
+            <Box>
+              <Heading as="h3" size="sm">Adresser</Heading>
+              <Text>Selma Lagerlöfs gata 5</Text>
+              <Text>Selma Lagerlöfs gata 7</Text>
+            </Box>
+            <Box>
+              <Heading as="h3" size="sm">Org. nr.</Heading>
+              <Text>769637-2015</Text>
+            </Box>
+          </Stack>
+          <LocationMap />
+        </Grid>
+      </Container>
     </Box>
   );
 }
