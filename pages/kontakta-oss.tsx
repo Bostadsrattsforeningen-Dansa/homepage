@@ -67,7 +67,7 @@ export default function ContactInformation({
           <Heading as="h3" size="lg" textAlign="center">
             Styrelsen
           </Heading>
-          <SimpleGrid columns={[2, 2, 3]} spacing={3}>
+          <SimpleGrid columns={[1, 2, 3]} spacing={3}>
             {boardMembers.map(
               ({
                 sys,
