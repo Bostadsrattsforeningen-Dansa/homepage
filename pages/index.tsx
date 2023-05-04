@@ -5,7 +5,6 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-  Container,
   Grid,
   GridItem,
   Heading,
@@ -13,7 +12,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { Link, LocationMap } from "components";
+import { ContentContainer, Link, LocationMap } from "components";
 import { renderRichText } from "../contentful";
 import { GetStaticPropsContext } from "next";
 import Head from "next/head";
@@ -63,11 +62,11 @@ export default function Home({ hero, about, infoCards }: HomeProps) {
         objectFit="cover"
         objectPosition="bottom"
       />
-      <Container paddingY={12} maxW="3xl" centerContent bgColor="white">
+      <ContentContainer paddingY={12} centerContent bgColor="white">
         {renderRichText(about)}
-      </Container>
+      </ContentContainer>
       <Box bgColor="green.600" paddingY={12}>
-        <Container maxW="3xl">
+        <ContentContainer>
           <Grid gap={4} templateColumns={["1fr", "repeat(2, 1fr)"]}>
             {infoCards.map(({ sys, fields }) => (
               <GridItem key={sys.id}>
@@ -93,9 +92,9 @@ export default function Home({ hero, about, infoCards }: HomeProps) {
               </GridItem>
             ))}
           </Grid>
-        </Container>
+        </ContentContainer>
       </Box>
-      <Container maxW="3xl" paddingY={12}>
+      <ContentContainer paddingY={12}>
         <Grid gap={4} templateColumns={["1fr", "1fr", "200px auto"]}>
           <Stack gap={2}>
             <Heading>Kontakt</Heading>
@@ -117,7 +116,7 @@ export default function Home({ hero, about, infoCards }: HomeProps) {
           </Stack>
           <LocationMap />
         </Grid>
-      </Container>
+      </ContentContainer>
     </Box>
   );
 }

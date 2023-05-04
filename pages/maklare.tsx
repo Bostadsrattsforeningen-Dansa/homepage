@@ -1,5 +1,5 @@
-import { Container, Heading, Stack } from "@chakra-ui/react";
-import { AboutSummary } from "components";
+import { Heading, Stack } from "@chakra-ui/react";
+import { AboutSummary, ContentContainer } from "components";
 import Head from "next/head";
 
 export default function RealEstateAgents() {
@@ -10,14 +10,14 @@ export default function RealEstateAgents() {
         <meta name="description" content="Bostadsrättsföreningen Dansa" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container paddingY={12} maxW="3xl">
+      <ContentContainer paddingY={12}>
         <Stack gap={8} width="100%">
           <Heading as="h2" textAlign="center">
             Mäklare
           </Heading>
           <AboutSummary />
         </Stack>
-      </Container>
+      </ContentContainer>
     </div>
   );
 }

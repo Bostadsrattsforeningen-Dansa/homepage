@@ -20,6 +20,7 @@ import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import { Document } from "@contentful/rich-text-types";
+import { ContentContainer } from "components";
 
 type ProfileImage = {
   fields: {
@@ -56,7 +57,7 @@ export default function ContactInformation({
         <meta name="description" content="Bostadsrättsföreningen Dansa" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container paddingY={12} maxW="3xl">
+      <ContentContainer paddingY={12}>
         <Stack gap={8} width="100%">
           <Heading as="h2" textAlign="center">
             Kontakta oss
@@ -130,7 +131,7 @@ export default function ContactInformation({
             )}
           </SimpleGrid>
         </Stack>
-      </Container>
+      </ContentContainer>
     </div>
   );
 }

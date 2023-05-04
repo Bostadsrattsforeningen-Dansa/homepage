@@ -4,7 +4,6 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-  Container,
   Heading,
   Stack,
 } from "@chakra-ui/react";
@@ -13,6 +12,7 @@ import { client } from "contentful-client";
 import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 import { Document } from "@contentful/rich-text-types";
+import { ContentContainer } from "components";
 
 type FAQFields = {
   question: string;
@@ -35,7 +35,7 @@ export default function FAQ({ questions }: FAQProps) {
         <meta name="description" content="Bostadsrättsföreningen Dansa" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container paddingY={12} maxW="3xl">
+      <ContentContainer paddingY={12}>
         <Stack gap={8} width="100%">
           <Heading as="h2" textAlign="center">
             Frågor och svar
@@ -61,7 +61,7 @@ export default function FAQ({ questions }: FAQProps) {
             ))}
           </Accordion>
         </Stack>
-      </Container>
+      </ContentContainer>
     </div>
   );
 }
