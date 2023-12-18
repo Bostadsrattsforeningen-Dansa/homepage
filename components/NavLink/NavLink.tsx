@@ -11,6 +11,8 @@ export function NavLink(props: NavLinkProps) {
       {...props}
       as={NextLink}
       color={pathname === props.href ? "green.600" : undefined}
+      padding={4}
+      borderBottom={pathname === props.href ? "3px solid var(--chakra-colors-green-600)" : undefined}
     />
   );
 }

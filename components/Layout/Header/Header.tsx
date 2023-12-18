@@ -56,7 +56,7 @@ export function Header() {
 
   return (
     <Flex
-      p={4}
+      py={4}
       minWidth="max-content"
       alignItems="center"
       gap="2"
